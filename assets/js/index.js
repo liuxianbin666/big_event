@@ -49,12 +49,12 @@ function renderAvatar(user) {
   //2.设置欢迎的文本
   $('#welcome').html('欢迎&nbsp&nbsp' + name);
   //3.按需渲染用户的头像
-  if (user.pic !== null) {
-    $('.layui-nav-img').attr('src', user.userpic).show();
+  if (user.user_pic !== null) {
+    $('.layui-nav-img').attr('src', user.user_pic).show();
     $('.text-avatar').hide();
+  } else {
+    const first = name[0].toUpperCase();
+    $('.text-avatar').html(first).show();
+    $('.layui-nav-img').hide();
   }
-
-  const first = name[0].toUpperCase();
-  $('.layui-nav-img').hide();
-  $('.text-avatar').html(first).show();
 }
